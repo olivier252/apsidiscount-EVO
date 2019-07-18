@@ -8,9 +8,8 @@ import com.apsidiscount.entity.Categorie;
 public interface ArticleDAO {
 
 	Article getById(long id);
-
 	List<Article> getByCategorie(String nomCategorie);
-
 	List<Article> getByCategorie(Categorie categorie);
+	List<Article> getAllArt();
 
 }

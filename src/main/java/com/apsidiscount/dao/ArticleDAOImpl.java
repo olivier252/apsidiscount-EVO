@@ -41,5 +41,11 @@ public class ArticleDAOImpl implements ArticleDAO {
 				      .setParameter("categorie", categorie)
 			          .getResultList();
 	}
+	
+	@Override
+	public List<Article> getAllArt() {
+		return this.em.createQuery("select a from Article a", Article.class)
+			          .getResultList();
+	}
 
 }
