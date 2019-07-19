@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import com.apsidiscount.entity.Article;
 import com.apsidiscount.entity.Categorie;
-import com.apsidiscount.entity.Client;
 
 @Repository
 public class ArticleDAOImpl implements ArticleDAO {
