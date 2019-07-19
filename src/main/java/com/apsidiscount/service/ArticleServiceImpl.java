@@ -41,19 +41,5 @@ public class ArticleServiceImpl implements ArticleService{
 		
 		return article;
 	}
-
-	@Override
-	public Article modifier(long id, String designation, String description) throws ArticleInconnuException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Article modifier(Article article) throws ArticleInconnuException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
 }
 
