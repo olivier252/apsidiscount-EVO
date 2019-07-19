@@ -32,6 +32,7 @@ public class ArticleServiceImpl implements ArticleService{
 	@Transactional
 	public Article modifier(Article article, long id) throws ArticleInconnuException {
 		Article articleVar = getById(id);
+		articleVar = article;
 		return articleVar;
 	}
 	
