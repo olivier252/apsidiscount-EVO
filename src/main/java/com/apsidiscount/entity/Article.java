@@ -51,6 +51,16 @@ public class Article {
 	
 	@Column(name="STOCK")
 	private long stock;
+	
+	public Article() {}
+	
+	public Article(Long id, String designation, BigDecimal prix, Date miseEnLigne, long stock) {
+		this.id = id;
+		this.designation = designation;
+		this.prix = prix;
+		this.miseEnLigne = miseEnLigne;
+		this.stock = stock;
+	}
 
 	public Long getId() {
 		return id;

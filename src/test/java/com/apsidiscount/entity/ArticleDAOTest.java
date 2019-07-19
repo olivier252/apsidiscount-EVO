@@ -34,6 +34,15 @@ public class ArticleDAOTest extends AbstractBaseTest {
 	}
 
 	@Test
+	public void canGetAll() throws Exception {
+		ArticleDAO articleDAO = new ArticleDAOImpl(this.em);
+		
+		List<Article> articles = articleDAO.getAllArt();
+		
+		assertFalse(articles.isEmpty());
+	}
+
+	@Test
 	public void canGetByCategorie() throws Exception {
 		ArticleDAO articleDAO = new ArticleDAOImpl(this.em);
 		Categorie categorie = new Categorie();
