@@ -30,9 +30,17 @@ public class ArticleServiceImpl implements ArticleService{
 	
 	@Override
 	@Transactional
-	public Article modifier(Article article, long id) throws ArticleInconnuException {
-		Article articleVar = getById(id);
-		articleVar = article;
+	public Article modifier(Article article) throws ArticleInconnuException {
+		Article articleVar = getById(article.getId());
+		articleVar.setImage(article.getImage());
+		articleVar.setDesignation(article.getDesignation());
+		articleVar.setPrix(article.getPrix());
+		articleVar.setDescription(article.getDescription());
+		articleVar.setCategorie(article.getCategorie());
+		articleVar.setConstructeur(article.getConstructeur());
+		articleVar.setMiseEnLigne(article.getMiseEnLigne());
+		articleVar.setStock(article.getStock());
+	
 		return articleVar;
 	}
 	
