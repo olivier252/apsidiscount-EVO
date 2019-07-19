@@ -11,6 +11,10 @@ public interface ArticleService {
 
 	List<Article> getAllArticle();
 
+	Article modifier(Article article) throws ArticleInconnuException;
+
+	Article modifier(Article article, long id) throws ArticleInconnuException;
+
 
 
 }

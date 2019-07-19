@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.apsidiscount.entity.Article;
 import com.apsidiscount.entity.Categorie;
+import com.apsidiscount.entity.Client;
 
 @Repository
 public class ArticleDAOImpl implements ArticleDAO {
@@ -47,5 +48,4 @@ public class ArticleDAOImpl implements ArticleDAO {
 		return this.em.createQuery("select new Article(a.id, a.designation, a.prix, a.miseEnLigne, a.stock) from Article a", Article.class)
 			          .getResultList();
 	}
-
 }

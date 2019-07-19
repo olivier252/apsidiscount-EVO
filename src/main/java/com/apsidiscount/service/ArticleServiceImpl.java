@@ -30,11 +30,9 @@ public class ArticleServiceImpl implements ArticleService{
 	
 	@Override
 	@Transactional
-	public Article modifier(long id, String designation, String description) throws ArticleInconnuException {
-		Article article = getById(id);
-		article.setDescription(description);
-		article.setDesignation(designation);
-		return article;
+	public Article modifier(Article article, long id) throws ArticleInconnuException {
+		Article articleVar = getById(id);
+		return articleVar;
 	}
 	
 	@Override
@@ -43,5 +41,19 @@ public class ArticleServiceImpl implements ArticleService{
 		
 		return article;
 	}
+
+	@Override
+	public Article modifier(long id, String designation, String description) throws ArticleInconnuException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Article modifier(Article article) throws ArticleInconnuException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
 }
 
