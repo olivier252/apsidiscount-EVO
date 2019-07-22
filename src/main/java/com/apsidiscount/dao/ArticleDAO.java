@@ -9,10 +9,10 @@ import com.apsidiscount.entity.Constructeur;
 public interface ArticleDAO {
 
 	Article getById(long id);
-	List<Article> getByCategorie(String nomCategorie);
-	List<Article> getByCategorie(Categorie categorie);
+	List<Article> getByCategorie(String nomCat);
+	List<Article> getByCategorieById(Long id);
 	List<Article> getAllArt();
-	List<Article> getByConstructeur(Constructeur constructeur);
+	List<Article> getByConstructeurById(Long id);
 
 
 

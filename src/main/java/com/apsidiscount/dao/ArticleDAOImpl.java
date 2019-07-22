@@ -35,13 +35,6 @@ public class ArticleDAOImpl implements ArticleDAO {
 				      .setParameter("nomCategorie", nomCategorie)
 				      .getResultList();
 	}
-
-	@Override
-	public List<Article> getByCategorie(Categorie categorie) {
-		return this.em.createQuery("select a from Article a where a.categorie = :categorie", Article.class)
-				      .setParameter("categorie", categorie)
-			          .getResultList();
-	}
 	
 	@Override
 	public List<Article> getAllArt() {
@@ -49,12 +42,19 @@ public class ArticleDAOImpl implements ArticleDAO {
 			          .getResultList();
 	}
 	
-	//Ajout 21/7
-	
+
+
 	@Override
-	public List<Article> getByConstructeur(Constructeur constructeur) {
-		return this.em.createQuery("select a from Article a where a.constructeur = :constructeur", Article.class)
-				.setParameter("constructeur", constructeur)
-				.getResultList();
+	public List<Article> getByCategorieById(Long id) {
+		return this.em.createQuery("select a from Article a join a.categorie c where c.id = :id", Article.class)
+			      .setParameter("id", id)
+		          .getResultList();
+	}
+
+	@Override
+	public List<Article> getByConstructeurById(Long id) {
+		return this.em.createQuery("select a from Article a join a.constructeur c where c.id = :id", Article.class)
+					.setParameter("id", id)
+					.getResultList();
 	}
 }

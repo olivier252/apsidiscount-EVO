@@ -10,7 +10,7 @@ public interface ArticleService {
 	Article getById(long id) throws ArticleInconnuException;
 	List<Article> getAllArticle();
 	Article modifier(Article article) throws ArticleInconnuException;
-	List<Article> getArticlesByCategory(Categorie categorie);
-	List<Article> getArticlesByConstructeur(Constructeur constructeur);
+	List<Article> getArticlesByCategory(Long id);
+	List<Article> getArticlesByConstructeur(Long id);
 
 }
