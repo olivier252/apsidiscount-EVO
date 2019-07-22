@@ -1,7 +1,10 @@
 package com.apsidiscount.dao;
 
+import java.util.List;
+
 import org.springframework.context.support.GenericXmlApplicationContext;
 
+import com.apsidiscount.entity.Article;
 import com.apsidiscount.service.ApsiDiscountException;
 import com.apsidiscount.service.ClientService;
 
@@ -16,6 +19,12 @@ public class Application {
 		} catch (ApsiDiscountException e) {
 			e.printStackTrace();
 		}
+		
+		ArticleDAO cdao = new ArticleDAOImpl();
+		
+		List<Article> lcad = cdao.getAllArt();
+		
+		System.out.println(lcad.toString());
 	}
 	
 }

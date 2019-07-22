@@ -21,5 +21,13 @@ public class CategorieDAOTest extends AbstractBaseTest {
 		
 		assertFalse(categories.isEmpty());
 	}
+	
+	@Test
+	public void cangetAllCategorie() {
+		CategorieDAO categorieDAO = new CategorieDAOImpl(this.em);
+		List<Categorie> categories = categorieDAO.getAllCategories();
+		assertFalse(categories.isEmpty());
+		
+	}
 
 }
