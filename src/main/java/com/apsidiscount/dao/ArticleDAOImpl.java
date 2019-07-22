@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import com.apsidiscount.entity.Article;
 import com.apsidiscount.entity.Categorie;
+import com.apsidiscount.entity.Constructeur;
 
 @Repository
 public class ArticleDAOImpl implements ArticleDAO {
@@ -46,5 +47,14 @@ public class ArticleDAOImpl implements ArticleDAO {
 	public List<Article> getAllArt() {
 		return this.em.createQuery("select new Article(a.id, a.designation, a.prix, a.miseEnLigne, a.stock) from Article a", Article.class)
 			          .getResultList();
+	}
+	
+	//Ajout 21/7
+	
+	@Override
+	public List<Article> getByConstructeur(Constructeur constructeur) {
+		return this.em.createQuery("select a from Article a where a.constructeur = :constructeur", Article.class)
+				.setParameter("constructeur", constructeur)
+				.getResultList();
 	}
 }

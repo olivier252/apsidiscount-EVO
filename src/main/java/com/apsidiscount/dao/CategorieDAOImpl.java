@@ -29,5 +29,14 @@ public class CategorieDAOImpl implements CategorieDAO {
 				 .setParameter("prix", prix)
 				 .getResultList();
 	}
+	
+	//ajout 21/7
+	
+	@Override
+	public List <Categorie> getAllCategories(){
+		return this.em.createQuery("select c from Categorie c", Categorie.class)
+				.getResultList();
+	}
+	
 
 }

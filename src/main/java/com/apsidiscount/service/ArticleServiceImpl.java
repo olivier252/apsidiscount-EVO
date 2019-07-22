@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.apsidiscount.dao.ArticleDAO;
 import com.apsidiscount.entity.Article;
+import com.apsidiscount.entity.Categorie;
+import com.apsidiscount.entity.Constructeur;
 
 @Service
 public class ArticleServiceImpl implements ArticleService{
@@ -32,6 +34,7 @@ public class ArticleServiceImpl implements ArticleService{
 	@Transactional
 	public Article modifier(Article article) throws ArticleInconnuException {
 		Article articleVar = getById(article.getId());
+		//pourquoi tout modifier ?
 		articleVar.setImage(article.getImage());
 		articleVar.setDesignation(article.getDesignation());
 		articleVar.setPrix(article.getPrix());
@@ -49,6 +52,22 @@ public class ArticleServiceImpl implements ArticleService{
 		List<Article> article = articleDAO.getAllArt();
 		
 		return article;
+	}
+	
+	//ajout 21/7
+	
+	@Override
+	public List<Article> getArticlesByCategory(Categorie categorie) {
+		List<Article> articleCategory = articleDAO.getByCategorie(categorie);
+		
+		return articleCategory;
+	}
+	
+	@Override 
+	public List <Article> getArticlesByConstructeur(Constructeur constructeur) {
+		List <Article> articleConstruct = articleDAO.getByConstructeur(constructeur);
+		
+		return articleConstruct;
 	}
 }
 
